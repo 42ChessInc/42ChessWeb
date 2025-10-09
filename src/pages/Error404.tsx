@@ -1,7 +1,7 @@
 // import Lottie from "react-lottie-player";
 // import animationData from "../assets/error404_animation.json";
 
-const Error404 = () => {
+export const Error404 = () => {
   return (
     <div className="min-h-screen flex items-center justify-center flex-col p-4">
       <div style={{ width: 480, maxWidth: "100%" }}>
@@ -12,5 +12,3 @@ const Error404 = () => {
     </div>
   );
 };
-
-export default Error404;
