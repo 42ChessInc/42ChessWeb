@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-
-# Sitemap — update if you use a custom domain
-Sitemap: https://42chessinc.github.io/42Chess-Web/sitemap.xml
-
-# Notes:
-# - GitHub Pages ignores Crawl-delay; most modern crawlers respect Sitemap and robots directives.

@@ -9,8 +9,8 @@ function App() {
       <Router>
         <div>
           <Routes>
-            <Route exact path="/" element={<UnderConstruction />} />
-            <Route exact path="/home" element={<Home />} />
+            <Route path="/" element={<UnderConstruction />} />
+            <Route path="/home" element={<Home />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
         </div>

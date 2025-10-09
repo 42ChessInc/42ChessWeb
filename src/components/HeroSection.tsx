@@ -1,5 +1,5 @@
-import React from "react";
 import king from "../assets/pieces/king_piece.png";
+
 const HeroSection = () => {
   return (
     <section>
