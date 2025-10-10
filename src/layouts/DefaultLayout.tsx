@@ -2,9 +2,9 @@ import { Outlet } from "react-router-dom"
 
 export const DefaultLayout = () => {
 	return (
-		<body>
+		<main className="h-screen w-screen bg-[#0D1426]">
 			{/* <NavBar /> */}
 			<Outlet />
-		</body>
+		</main>
 	)
 }
