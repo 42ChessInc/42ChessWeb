@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
+import { Header } from "../components/Header";
 
 export const DefaultLayout = () => {
   return (
-    <main className="h-screen w-screen bg-white">
-      {/* <NavBar /> */}
+    <main className="relative h-screen w-screen bg-[var(--color-background)]">
+      <Header />
       <Outlet />
     </main>
   );
