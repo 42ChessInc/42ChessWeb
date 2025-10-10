@@ -1,15 +1,15 @@
-import {Outlet} from "react-router-dom";
-import {Header} from "../components/Header";
-import {Queen3d} from "../components/Queen";
+import { Outlet } from 'react-router-dom';
+import { Header } from '../components/Header';
+import Queen from '../components/Queen';
+import { Footer } from '../components/Footer';
 
 export const DefaultLayout = () => {
 	return (
-		<div className="relative flex flex-col h-screen w-screen bg-[var(--color-background)] overflow-x-hidden">
+		<main className="relative h-screen w-screen bg-[var(--color-background)]">
 			<Header />
-			<main className="w-full h-full">
-				<Queen3d />
-				<Outlet />
-			</main>
-		</div>
+			<Queen />
+			<Outlet />
+			<Footer />
+		</main>
 	);
 };
