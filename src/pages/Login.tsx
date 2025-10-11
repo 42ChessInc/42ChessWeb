@@ -155,7 +155,7 @@ export const Login: React.FC = () => {
               {loading ? "Logging in..." : "Log in"}
             </button>
             <span className="">
-              Still does not have an accout?{" "}
+              Still does not have an account?{" "}
               <a className="font-bold" href="/register">
                 Register
               </a>
