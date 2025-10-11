@@ -1,4 +1,4 @@
-const Footer: React.FC = () => {
+export const Footer: React.FC = () => {
     return (
         <footer className="w-full py-10 my-10 bg-[#e6d9c2]">
             <div className="container mx-auto px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
@@ -40,5 +40,3 @@ const Footer: React.FC = () => {
         </footer>
     );
 }
-
-export default Footer;
