@@ -5,11 +5,13 @@ import { Footer } from '../components/Footer';
 
 export const DefaultLayout = () => {
 	return (
-		<main className="relative h-screen w-screen bg-[var(--color-background)]">
+		<div className="bg-[var(--color-background)]">
 			<Header />
-			<Queen />
-			<Outlet />
+			<main className="relative w-screen">
+				<Queen />
+				<Outlet />
+			</main>
 			<Footer />
-		</main>
+		</div>
 	);
 };
