@@ -26,12 +26,13 @@ export default function Queen() {
 		const renderer =
 			new THREE.WebGLRenderer({
 				antialias: true,
+				alpha: true,
 			});
 		renderer.setSize(
 			container.clientWidth,
 			container.clientHeight
 		);
-		renderer.setClearColor(0xffffff, 1);
+		renderer.setClearColor(0xffffff, 0);
 		container.appendChild(
 			renderer.domElement
 		);
@@ -162,10 +163,7 @@ export default function Queen() {
 	return (
 		<div
 			ref={containerRef}
-			style={{
-				width: '100%',
-				height: '100vh',
-			}}
+			className="absolute h-full w-1/3 right-1/12 top-0"
 		/>
 	);
 }
