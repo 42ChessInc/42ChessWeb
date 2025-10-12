@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import { Header } from '../components/Header';
-import { Queen } from '../components/Queen';
+import Queen from '../components/Queen';
 import { Footer } from '../components/Footer';
 
 export const DefaultLayout = () => {
