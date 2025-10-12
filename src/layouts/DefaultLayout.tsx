@@ -4,7 +4,7 @@ import {Queen3d} from "../components/Queen";
 
 export const DefaultLayout = () => {
 	return (
-		<div className="relative h-screen w-screen bg-[var(--color-background)]">
+		<div className="relative flex flex-col h-screen w-screen bg-[var(--color-background)] overflow-x-hidden">
 			<Header />
 			<main className="w-full h-full">
 				<Queen3d />
