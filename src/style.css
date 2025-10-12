@@ -1,12 +1,29 @@
 @import "tailwindcss";
 
+.font-jersey {
+  font-family: "Jersey 25", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
   /* core palette */
   --color-text: #131628;
-  --color-background: #f5f5e6;
+  --color-background: #CFB18C;
   --color-primary: #c19a6b;
   --color-secondary: #e6d9c2;
   --color-accent: #7d4b32;
+
+  --font-primary: "Jersey 25", sans-serif;
+
+  /* Header */
+  --color-logo-text: #2F200E;
+  --color-button: #2F200E;
+  --color-button-text: #E6D9C2;
+
+  /* Home */
+  --color-card-1: #885B25; 
+  --color-card-2: #E6D9C2; 
 
   /* text variations */
   --color-text-muted: #5b6169; /* lighter, for secondary text */
