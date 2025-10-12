@@ -4,10 +4,12 @@ import {Queen3d} from "../components/Queen";
 
 export const DefaultLayout = () => {
 	return (
-		<main className="relative h-screen w-screen bg-[var(--color-background)]">
+		<div className="relative h-screen w-screen bg-[var(--color-background)]">
 			<Header />
-			<Queen3d />
-			<Outlet />
-		</main>
+			<main className="w-full h-full">
+				<Queen3d />
+				<Outlet />
+			</main>
+		</div>
 	);
 };
