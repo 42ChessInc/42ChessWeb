@@ -12,7 +12,7 @@ export const Login: React.FC = () => {
 
   const palette = {
     text: "#131628",
-    background: "#F5F1E6",
+    background: "#CFB18C",
     primary: "#C19A6B",
     secondary: "#E6D9C2",
     accent: "#7D4B32",
