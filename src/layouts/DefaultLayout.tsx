@@ -7,12 +7,10 @@ export const DefaultLayout = () => {
   return (
     <div className="bg-[var(--color-background)]">
       <Header />
-      <main className="relative w-screen">
         <div className="hidden lg:block">
           <Queen />
         </div>
         <Outlet />
-      </main>
       <Footer />
     </div>
   );
