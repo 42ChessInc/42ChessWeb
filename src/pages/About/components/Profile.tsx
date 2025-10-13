@@ -107,7 +107,7 @@ export default function Profiles() {
 const ProfileCard = ({ profile }: { profile: ProfilesType }) => {
     const {username, imageUrl, description, linkedIn} = profile;
     return (
-        <div className="flex items-start">
+        <div className="flex items-start hover:shadow-[0px_7px_29px_5px_rgba(100,_100,_111,_0.14)] p-5 transition-shadow">
             <a className="flex items-start" href={linkedIn} target="_blank">
                 <img className="rounded-[50%] w-[50px] h-[50px] mr-3" src={imageUrl}></img>
                 <div>
