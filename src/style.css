@@ -9,7 +9,7 @@
 :root {
   /* core palette */
   --color-text: #131628;
-  --color-background: #CFB18C;
+  --color-background: #cfb18c;
   --color-primary: #c19a6b;
   --color-secondary: #e6d9c2;
   --color-accent: #7d4b32;
@@ -17,13 +17,15 @@
   --font-primary: "Jersey 25", sans-serif;
 
   /* Header */
-  --color-logo-text: #2F200E;
-  --color-button: #2F200E;
-  --color-button-text: #E6D9C2;
+  --color-logo-text: #2f200e;
+  --color-button: #2f200e;
+  --color-button: #2f200e;
+  --color-button-ligth: #3b2d1b;
+  --color-button-text: #e6d9c2;
 
   /* Home */
-  --color-card-1: #885B25; 
-  --color-card-2: #E6D9C2; 
+  --color-card-1: #885b25;
+  --color-card-2: #e6d9c2;
 
   /* text variations */
   --color-text-muted: #5b6169; /* lighter, for secondary text */
