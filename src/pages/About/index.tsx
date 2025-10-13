@@ -1,4 +1,5 @@
 import React from "react";
+import Profiles from "./components/Profile";
 
 type Collaborator = { name: string; href?: string; description?: string };
 
@@ -105,8 +106,7 @@ export const About: React.FC = () => {
           </article>
         </section>
       </div>
+      <Profiles />
     </section>
   );
 };
-
-export default About;

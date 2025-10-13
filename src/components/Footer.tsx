@@ -1,6 +1,6 @@
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full py-10 mt-10 bg-[#e6d9c2]">
+    <footer className="w-full py-10 mt-10 bg-[var(--color-secondary)]">
       <div className="container mx-auto px-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
         <div className="flex flex-col mb-6">
           <a
@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
           <ul className="flex flex-col space-y-2">
             <li>
               <a
-                href="#"
+                href="/"
                 className="text-gray-500 hover:text-gray-800 transition"
               >
                 Home
@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
             </li>
             <li>
               <a
-                href="#"
+                href="https://github.com/42ChessInc"
                 className="text-gray-500 hover:text-gray-800 transition"
               >
                 Play Chess
@@ -37,7 +37,7 @@ export const Footer: React.FC = () => {
             </li>
             <li>
               <a
-                href="#"
+                href="/learn"
                 className="text-gray-500 hover:text-gray-800 transition"
               >
                 Learn Chess
@@ -45,15 +45,16 @@ export const Footer: React.FC = () => {
             </li>
             <li>
               <a
-                href="#"
+                href="https://github.com/42ChessInc"
                 className="text-gray-500 hover:text-gray-800 transition"
+                target="_blank"
               >
                 Puzzles
               </a>
             </li>
             <li>
               <a
-                href="#"
+                href="/about"
                 className="text-gray-500 hover:text-gray-800 transition"
               >
                 About Us
@@ -66,24 +67,27 @@ export const Footer: React.FC = () => {
           <ul className="flex flex-col space-y-2">
             <li>
               <a
-                href="#"
+                href="https://github.com/42ChessInc"
                 className="text-gray-500 hover:text-gray-800 transition"
+                target="_blank"
               >
                 Contacts
               </a>
             </li>
             <li>
               <a
-                href="#"
+                href="https://github.com/42ChessInc"
                 className="text-gray-500 hover:text-gray-800 transition"
+                target="_blank"
               >
                 Partnership
               </a>
             </li>
             <li>
               <a
-                href="#"
+                href="https://github.com/42ChessInc"
                 className="text-gray-500 hover:text-gray-800 transition"
+                target="_blank"
               >
                 Our Github
               </a>
