@@ -21,7 +21,7 @@ export const Register: React.FC = () => {
 
   const validateEmail = (value: string) => /\S+@\S+\.\S+/.test(value);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
@@ -34,11 +34,40 @@ export const Register: React.FC = () => {
     if (password !== confirm) return setError("Passwords do not match.");
 
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      // replace with real API call
+    try {
+      // prefer VITE_API_URL, fallback to localhost for local dev
+      const baseUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
+      const res = await fetch(`${baseUrl.replace(/\/+$/, "")}/auth/register`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: username, email, password }),
+      });
+
+      const json = await res.json();
+      // If the backend returned an error status show its message
+      if (!res.ok) {
+        setError(json?.message ?? "Registration failed");
+        setLoading(false);
+        return;
+      }
+
+      // expected response: { user, token }
+      const token = json?.token;
+      if (token) {
+        localStorage.setItem("token", token);
+      }
+
+      // avoid logging sensitive tokens
+      console.debug("register successful", { email });
+      // Only navigate after a successful registration
       navigate("/login", { replace: true });
-    }, 900);
+    } catch (err: unknown) {
+      if (err instanceof Error) setError(err.message);
+      else if (typeof err === "string") setError(err);
+      else setError("Registration failed");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

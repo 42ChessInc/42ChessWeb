@@ -5,6 +5,7 @@ import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
 import { Learn } from "./pages/Learn";
 import { About } from "./pages/About";
+import { Tournament } from "./pages/Tournament";
 import { DefaultLayout } from "./layouts/DefaultLayout";
 
 // import {UnderConstruction} from "./pages/UnderConstruction";
@@ -20,6 +21,7 @@ export const Router = createBrowserRouter([
       { path: "/register", element: <Register /> },
       { path: "/learn", element: <Learn /> },
       { path: "/about", element: <About /> },
+      { path: "/tournament", element: <Tournament /> },
     ],
   },
 ]);

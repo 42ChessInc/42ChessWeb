@@ -20,7 +20,7 @@ export const Login: React.FC = () => {
 
   const validateEmail = (value: string) => /\S+@\S+\.\S+/.test(value);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
@@ -37,14 +37,51 @@ export const Login: React.FC = () => {
       return;
     }
 
-    // Mock submit (replace with real auth call)
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      console.log("Login submitted", { email, password });
-      // navigate to main page after successful login
+
+    try {
+      const baseUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
+      const res = await fetch(`${baseUrl.replace(/\/+$/, "")}/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const json = await res.json();
+
+      if (!res.ok) {
+        // backend sends { message: "..."} for errors
+        throw new Error(json?.message ?? "Login failed");
+      }
+
+      // Example returned shape: { id, name, email, ..., token }
+      const token = json.token;
+      if (!token) throw new Error("No token returned from server");
+
+      // Store token (simple approach)
+      localStorage.setItem("token", token);
+      // Optionally store user data
+      localStorage.setItem(
+        "user",
+        JSON.stringify({ id: json.id, name: json.name, email: json.email })
+      );
+
+      // avoid logging sensitive tokens
+      console.debug("login successful", { email: json.email });
+      // navigate on success
       navigate("/", { replace: true });
-    }, 800);
+    } catch (err: unknown) {
+      // Narrow the unknown to extract a useful message safely
+      if (err instanceof Error) {
+        setError(err.message);
+      } else if (typeof err === "string") {
+        setError(err);
+      } else {
+        setError("Login failed");
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -105,6 +142,8 @@ export const Login: React.FC = () => {
             </span>
             <input
               type="email"
+              name="email"
+              autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
@@ -127,6 +166,8 @@ export const Login: React.FC = () => {
             </span>
             <input
               type="password"
+              name="password"
+              autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••"
