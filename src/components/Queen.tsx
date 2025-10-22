@@ -163,7 +163,7 @@ export default function Queen() {
 	return (
 		<div
 			ref={containerRef}
-			className="absolute h-full w-1/3 right-1/12 top-0"
+			className="hidden md:block h-[700px] w-1/3"
 		/>
 	);
 }
