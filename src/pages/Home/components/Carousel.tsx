@@ -1,4 +1,4 @@
-import club_img from "../assets/chess_club.svg";
+import club_img from '../assets/chess_club.svg';
 // import club_img_1 from "../assets/club_imgs_1.jpg";
 // import club_img_2 from "../assets/club_imgs_2.jpg";
 // import club_img_3 from "../assets/club_imgs_3.jpg";
@@ -8,8 +8,12 @@ import club_img from "../assets/chess_club.svg";
 
 export default function Carousel() {
 	return (
-		<section className="h-full w-full bg-transparent flex justify-center items-center">
-			<img src={club_img} className="h-full w-3/5 rounded-4xl shadow-2xl" alt="" />
+		<section className="mx-auto max-w-4xl p-4 bg-transparent flex justify-center items-center my-10">
+			<img
+				src={club_img}
+				className="w-full aspect-auto rounded-xl shadow-2xl"
+				alt=""
+			/>
 		</section>
 	);
 }

@@ -3,13 +3,13 @@ import styled from 'styled-components';
 export const Card = styled.a<{
 	$cardColor?: string;
 }>`
-	height: 18rem;
+	width: fit;
 	aspect-ratio: 1/1;
 	display: flex;
 	flex-direction: column;
 	align-items: start;
 	justify-content: space-between;
-	padding: 2rem;
+	padding: 1rem;
 	background-color: ${(props) =>
 		props.$cardColor == '1'
 			? 'var(--color-card-1)'
@@ -27,5 +27,9 @@ export const Card = styled.a<{
 	&:hover {
 		box-shadow: none;
 		transform: translate(5px, 5px);
+	}
+
+	@media (min-width: 768px) {
+		padding: 2rem;
 	}
 `;
