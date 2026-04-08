@@ -4,6 +4,6 @@ import { ConstructionPage } from "./components/construction-page/construction-pa
 export const routes: Routes = [
 	{
 		path: "",
-		component: ConstructionPage
-	}
+		component: ConstructionPage,
+	},
 ];
