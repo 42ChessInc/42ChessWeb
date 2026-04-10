@@ -7,10 +7,11 @@ import { apiUrl } from '../../environments/environment';
 	providedIn: 'root'
 })
 export class AuthService {
+	private authUrl = (apiUrl + "/auth");
+
 	constructor(private http: HttpClient) { }
 
 	login(data: any) {
-		console.log(data);
-		// return this.http.post(`${apiUrl}/login`, data);
+		return this.http.post(`${this.authUrl}/login`, data);
 	}
 }
