@@ -1,11 +1,10 @@
 import { Component } from "@angular/core";
-import { EmailInput } from "./components/email-input/email-input";
-import { PasswordInput } from "./components/password-input/password-input";
-import { UsernameInput } from "./components/username-input/username-input";
+import { LoginForm } from "./components/login-form/login-form";
+import { RegisterForm } from "./components/register-form/register-form";
 
 @Component({
 	selector: "app-auth",
-	imports: [EmailInput, PasswordInput, UsernameInput],
+	imports: [LoginForm, RegisterForm],
 	templateUrl: "./auth.html",
 })
-export class Auth { }
+export class Auth {}

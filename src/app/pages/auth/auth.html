@@ -1,38 +1,9 @@
 <section class="h-full w-full flex items-center justify-center bg-neutral">
-
-	<!-- name of each tab group should be unique -->
 	<div class="tabs tabs-lift w-130 bg-base-300 p-2 rounded-2xl">
-
 		<input type="radio" name="my_tabs_3" class="tab" aria-label="Login" checked="checked" />
-		<form class="tab-content bg-base-100 border-base-300 p-6">
-
-			<h2 class="text-3xl font-bold mb-5">Login</h2>
-
-			<app-email-input />
-			<app-password-input />
-
-			<div class="flex justify-end mt-7">
-				<button class="btn btn-primary">Login</button>
-			</div>
-
-		</form>
+		<app-login-form class="tab-content" />
 
 		<input type="radio" name="my_tabs_3" class="tab" aria-label="Register" />
-		<form class="tab-content bg-base-100 border-base-300 p-6">
-
-			<h2 class="text-3xl font-bold mb-5">Register</h2>
-
-			<app-username-input />
-			<app-email-input />
-			<app-password-input />
-
-			<div class="flex justify-end mt-7">
-				<button class="btn btn-primary">Register</button>
-			</div>
-
-		</form>
+		<app-register-form class="tab-content" />
 	</div>
-
-
-
 </section>
