@@ -1,10 +1,10 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Component } from "@angular/core";
 
 
 @Component({
 	selector: "app-login-form",
-	imports: [],
+	imports: [ReactiveFormsModule],
 	templateUrl: "./login-form.html",
 })
 export class LoginForm {
@@ -12,13 +12,12 @@ export class LoginForm {
 
 	constructor(private fb: FormBuilder) {
 		this.loginForm = this.fb.group({
-			email: ['', Validators.required, Validators.email],
-			password: ['', Validators.required, Validators.minLength(8)]
+			email: ['', [Validators.required, Validators.email]],
+			password: ['', [Validators.required, Validators.minLength(8)]]
 		})
 	}
 
-	onSubmit(e: Event) {
-		e.preventDefault()
+	onSubmit() {
 		if (this.loginForm.valid) {
 			console.log(this.loginForm.value)
 		}
