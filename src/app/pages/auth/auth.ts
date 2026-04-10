@@ -1,9 +1,10 @@
 import { Component } from "@angular/core";
+import { LoginForm } from "./components/login-form/login-form";
+import { RegisterForm } from "./components/register-form/register-form";
 
 @Component({
 	selector: "app-auth",
-	imports: [],
+	imports: [LoginForm, RegisterForm],
 	templateUrl: "./auth.html",
-	styleUrl: "./auth.css",
 })
 export class Auth {}

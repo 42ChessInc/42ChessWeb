@@ -8,5 +8,5 @@ export const themes = [
 	"synthwave",
 	"retro",
 	"cyberpunk",
-	"valentine"
-]
+	"valentine",
+];
