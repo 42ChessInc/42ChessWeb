@@ -17,7 +17,8 @@ export class LoginForm {
 		})
 	}
 
-	onSubmit() {
+	onSubmit(e: Event) {
+		e.preventDefault()
 		if (this.loginForm.valid) {
 			console.log(this.loginForm.value)
 		}
