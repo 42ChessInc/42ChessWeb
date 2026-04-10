@@ -1,5 +1,7 @@
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Component } from "@angular/core";
+import { toast } from 'ngx-sonner';
+import { AuthService } from '../../../../services/auth-service';
 
 
 @Component({
@@ -10,7 +12,7 @@ import { Component } from "@angular/core";
 export class LoginForm {
 	loginForm: FormGroup;
 
-	constructor(private fb: FormBuilder) {
+	constructor(private fb: FormBuilder, private authService: AuthService) {
 		this.loginForm = this.fb.group({
 			email: ['', [Validators.required, Validators.email]],
 			password: ['', [Validators.required, Validators.minLength(8)]]
@@ -18,8 +20,16 @@ export class LoginForm {
 	}
 
 	onSubmit() {
-		if (this.loginForm.valid) {
-			console.log(this.loginForm.value)
-		}
+		// if (!this.loginForm.valid) return;
+		this.authService.login(this.loginForm.value).subscribe({
+			next: (res) => {
+				console.log('Success', res);
+				toast.success('sucesso');
+			},
+			error: (err) => {
+				console.error('Error', err);
+				toast.error('error');
+			}
+		});
 	}
 }
