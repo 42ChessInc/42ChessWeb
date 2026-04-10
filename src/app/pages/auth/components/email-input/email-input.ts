@@ -4,6 +4,5 @@ import { Component } from "@angular/core";
 	selector: "app-email-input",
 	imports: [],
 	templateUrl: "./email-input.html",
-	styleUrl: "./email-input.css",
 })
 export class EmailInput {}

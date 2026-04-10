@@ -7,6 +7,5 @@ import { UsernameInput } from "./components/username-input/username-input";
 	selector: "app-auth",
 	imports: [EmailInput, PasswordInput, UsernameInput],
 	templateUrl: "./auth.html",
-	styleUrl: "./auth.css",
 })
 export class Auth { }

@@ -4,6 +4,5 @@ import { Component } from "@angular/core";
 	selector: "app-password-input",
 	imports: [],
 	templateUrl: "./password-input.html",
-	styleUrl: "./password-input.css",
 })
 export class PasswordInput {}

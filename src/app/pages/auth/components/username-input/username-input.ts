@@ -4,6 +4,5 @@ import { Component } from "@angular/core";
 	selector: "app-username-input",
 	imports: [],
 	templateUrl: "./username-input.html",
-	styleUrl: "./username-input.css",
 })
 export class UsernameInput {}
