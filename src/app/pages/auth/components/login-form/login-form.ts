@@ -2,6 +2,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from "@angula
 import { Component } from "@angular/core";
 import { toast } from "ngx-sonner";
 import { AuthService } from "../../../../services/auth-service";
+import { tap } from "rxjs";
 
 @Component({
 	selector: "app-login-form",
@@ -26,11 +27,17 @@ export class LoginForm {
 		this.authService.login(this.loginForm.value).subscribe({
 			next: (token) => {
 				localStorage.setItem("token", token);
-				console.log("Success");
-				toast.success("sucesso");
+
+				this.authService.profile().subscribe({
+					next: (user) => {
+						console.log(this.authService.user);
+						toast.success("sucesso");
+					},
+					error: (err) => console.error("Profile error", err)
+				});
 			},
 			error: (err) => {
-				console.error("Error", err);
+				console.error(err);
 				toast.error("Invalid email or password");
 			},
 		});

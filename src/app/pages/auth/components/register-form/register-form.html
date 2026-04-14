@@ -1,6 +1,5 @@
-<form class="bg-base-100 border-base-300 p-6">
+<form class="bg-base-100 border-base-300 p-6" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 	<h2 class="text-3xl font-bold mb-5">Register</h2>
-
 	<label class="input validator floating-label w-full mt-5">
 		<span>Username</span>
 		<svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
